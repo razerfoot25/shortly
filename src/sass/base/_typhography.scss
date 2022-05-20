@@ -1,0 +1,16 @@
+@use "./fonts" as *;
+@use "../abstracts/breakpoints" as *;
+
+@each $viewpoint, $value in $size {
+  @each $tag, $size in $value {
+    #{$tag} {
+      @if ($viewpoint == small) {
+        font-size: $size;
+      } @else if ($viewpoint != small) {
+        @include breakpoint($viewpoint) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}

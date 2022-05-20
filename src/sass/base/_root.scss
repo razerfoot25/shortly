@@ -1,0 +1,46 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+@use "../abstracts/breakpoints" as b;
+
+// @each $elem, $value in $size {
+//   @each $type, $size in $value {
+//     @if ($elem == small) {
+//       #{$type} {
+//         font-size: $size;
+//       }
+//     } @else if($elem != small) {
+//       @include b.breakpoint(#{$elem}) {
+//         #{$type} {
+//           font-size: $size;
+//         }
+//       }
+//     }
+//   }
+// }
+
+:root {
+  --grid-column: 6;
+  --max-container-width: 90rem;
+  --grid-gap: 1em;
+
+  --spacer-margin: 2em;
+
+  --xsmall: 0.25em;
+  --small: 0.5em;
+  --medium: 1em;
+  --large: 1.5em;
+  --xl: 2em;
+  --2xl: 4em;
+  --3xl: 6em;
+
+  @each $base, $shade in $colors {
+    @each $shades, $colors in $shade {
+      --clr-#{$base}-#{$shades}: #{$colors};
+    }
+  }
+  @each $base, $weights in $weight {
+    @each $weight, $value in $weights {
+      --fw-#{$base}-#{$value}: #{$value};
+    }
+  }
+}

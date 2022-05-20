@@ -1,0 +1,113 @@
+@use "../abstracts/breakpoints" as *;
+
+.grid-container {
+  display: grid;
+  grid-template-columns:
+    Minmax(1rem, 1fr) repeat(
+      var(--grid-column),
+      Minmax(0, Calc(var(--max-container-width) / var(--grid-column)))
+    )
+    Minmax(1rem, 1fr);
+
+  > * {
+    grid-column: 2 / span var(--grid-column);
+  }
+}
+
+.grid-col-2 {
+  grid-column: 2 / span var(--grid-column);
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--grid-gap);
+  @include breakpoint(large) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-col-3 {
+  grid-column: 2 / span var(--grid-column);
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--grid-gap);
+  @include breakpoint(large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-col-4 {
+  grid-column: 2 / span var(--grid-column);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, Minmax(10rem, 1fr));
+  gap: var(--grid-gap);
+}
+
+.grid-col-auto {
+  grid-column: 2 / span var(--grid-column);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, Minmax(20rem, 1fr));
+  gap: var(--grid-gap);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint(large) {
+    flex-direction: row;
+  }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  > * + * {
+    margin-top: var(--spacer-margin);
+  }
+}
+
+.px-xs {
+  padding-inline: var(--xsmall);
+}
+.px-sm {
+  padding-inline: var(--small);
+}
+.px-md {
+  padding-inline: var(--medium);
+}
+.px-lg {
+  padding-inline: var(--large);
+}
+.px-xl {
+  padding-inline: var(--xl);
+}
+.px-2xl {
+  padding-inline: var(--2xl);
+}
+.px-3xl {
+  padding-inline: var(--3xl);
+}
+
+.py-xs {
+  padding-block: var(--xsmall);
+}
+.py-sm {
+  padding-block: var(--small);
+}
+.py-md {
+  padding-block: var(--medium);
+}
+.py-lg {
+  padding-block: var(--large);
+}
+.py-xl {
+  padding-block: var(--xl);
+}
+
+.py-2xl {
+  padding-block: var(--2xl);
+}
+.py-3xl {
+  padding-block: var(--3xl);
+}
