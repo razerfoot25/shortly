@@ -2,6 +2,7 @@
 
 .grid-container {
   display: grid;
+  width: 100%;
   grid-template-columns:
     Minmax(1rem, 1fr) repeat(
       var(--grid-column),
@@ -69,45 +70,114 @@
 
 .px-xs {
   padding-inline: var(--xsmall);
+  &-lg {
+    @include breakpoint(large) {
+    }
+  }
 }
 .px-sm {
   padding-inline: var(--small);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--small);
+    }
+  }
 }
 .px-md {
   padding-inline: var(--medium);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--medium);
+    }
+  }
 }
 .px-lg {
   padding-inline: var(--large);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--large);
+    }
+  }
 }
 .px-xl {
   padding-inline: var(--xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--xl);
+    }
+  }
 }
 .px-2xl {
   padding-inline: var(--2xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--2xl);
+    }
+  }
 }
 .px-3xl {
   padding-inline: var(--3xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--3xl);
+    }
+  }
 }
 
 .py-xs {
   padding-block: var(--xsmall);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--xsmall);
+    }
+  }
 }
 .py-sm {
   padding-block: var(--small);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--small);
+    }
+  }
 }
 .py-md {
   padding-block: var(--medium);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--medium);
+    }
+  }
 }
 .py-lg {
   padding-block: var(--large);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--large);
+    }
+  }
 }
 .py-xl {
   padding-block: var(--xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--xl);
+    }
+  }
 }
 
 .py-2xl {
   padding-block: var(--2xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--2xl);
+    }
+  }
 }
 .py-3xl {
   padding-block: var(--3xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-block: var(--3xl);
+    }
+  }
 }

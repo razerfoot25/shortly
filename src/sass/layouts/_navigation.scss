@@ -1,1 +1,63 @@
-// nav layouts
+@use "../components/buttons" as *;
+
+.nav {
+  position: relative;
+
+  &__logo {
+    display: flex;
+
+    justify-content: space-between;
+
+    :nth-child(2) {
+      content: url("../images/icon-hamburger.svg");
+      object-fit: contain;
+    }
+  }
+  &__menu--container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large);
+
+    background-color: var(--clr-primary-700);
+    border-radius: 0.75rem;
+    text-align: center;
+    position: absolute;
+    inset: 3.5rem 0 auto 0;
+
+    transform: translateX(110%);
+    transition: transform 250ms ease-out;
+
+    li {
+      a {
+        color: var(--clr-neutral-300);
+      }
+
+      button {
+        @include btn-blue-rounded;
+        display: block;
+        width: 100%;
+        margin-inline: auto;
+      }
+    }
+    :nth-child(4) {
+      padding-top: 1.25em;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        border: 1px solid var(--clr-neutral-400);
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.menu-open {
+  transform: translateX(0);
+}
+
+.testClass {
+  display: none;
+}

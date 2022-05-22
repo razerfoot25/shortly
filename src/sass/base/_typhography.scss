@@ -1,6 +1,6 @@
 @use "./fonts" as *;
 @use "../abstracts/breakpoints" as *;
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 @each $viewpoint, $value in $size {
   @each $tag, $size in $value {
     #{$tag} {
@@ -13,4 +13,29 @@
       }
     }
   }
+}
+
+body {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-weight: var(--fw-primary-500);
+}
+button {
+  font-weight: var(--fw-primary-700);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.5;
 }

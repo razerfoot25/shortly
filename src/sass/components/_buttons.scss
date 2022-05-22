@@ -1,27 +1,27 @@
-@mixin btn-red {
-  padding: 0.75em 1.25em;
+@mixin btn-blue {
+  padding: 0.75em 1.5em;
   border-radius: 0.5rem;
   border: 0;
   outline: 0;
   cursor: pointer;
-  background-color: red;
-  color: white;
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-300);
 
   &:hover {
-    background-color: white;
-    color: red;
-    outline: 2px solid red;
+    opacity: 0.6;
   }
 }
 
-@mixin btn-outline {
-  padding: 0.75em 1.25em;
-  border-radius: 0.5rem;
+@mixin btn-blue-rounded {
+  padding: 0.75em 1.5em;
+  border-radius: 2rem;
   border: 0;
   outline: 0;
   cursor: pointer;
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-300);
 
-  background-color: transparent;
-  color: black;
-  outline: 2px solid black;
+  &:hover {
+    opacity: 0.6;
+  }
 }

@@ -7,8 +7,8 @@ $size: (
     h5: 2rem,
     h6: 2rem,
     p: 1.2rem,
-    a: 1.5rem,
-    button: 1.5rem,
+    a: 1.25rem,
+    button: 1.25rem,
   ),
   large: (
     h1: 2.5rem,
@@ -19,19 +19,13 @@ $size: (
     h6: 2rem,
     p: 1.2rem,
     a: 1.5rem,
-    button: 1.5rem,
+    button: 1rem,
   ),
 );
 
 $weight: (
   primary: (
     500: 500,
-    600: 600,
-    700: 700,
-  ),
-  accent: (
-    500: 500,
-    600: 600,
     700: 700,
   ),
 );
