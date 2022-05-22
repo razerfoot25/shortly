@@ -46,7 +46,7 @@
   grid-column: 2 / span var(--grid-column);
   display: grid;
   grid-template-columns: repeat(auto-fit, Minmax(20rem, 1fr));
-  gap: var(--grid-gap);
+  gap: var(--2xl);
 }
 
 .flex-col {

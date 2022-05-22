@@ -1,0 +1,34 @@
+@use "../components/buttons" as *;
+@use "../abstracts/breakpoints" as *;
+
+.hero {
+  width: 100%;
+  overflow-x: hidden;
+  gap: var(--xl);
+  &__textfield {
+    text-align: center;
+    button {
+      @include btn-blue-rounded;
+    }
+
+    @include breakpoint(large) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      justify-content: center;
+    }
+  }
+  img {
+    grid-row: 1;
+    max-width: 120vw;
+    width: 120vw;
+    margin-inline: calc(-55vw + 65%);
+
+    @include breakpoint(large) {
+      max-width: 100%;
+      margin-inline: calc(-25vw + 75%);
+      grid-column: 2;
+    }
+  }
+}

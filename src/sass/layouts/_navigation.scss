@@ -1,5 +1,5 @@
 @use "../components/buttons" as *;
-
+@use "../abstracts/breakpoints" as *;
 .nav {
   position: relative;
 
@@ -11,6 +11,15 @@
     :nth-child(2) {
       content: url("../images/icon-hamburger.svg");
       object-fit: contain;
+    }
+  }
+
+  &__menu--bg {
+    display: none;
+
+    @include breakpoint(large) {
+      display: block;
+      flex-grow: 1;
     }
   }
   &__menu--container {
@@ -50,14 +59,43 @@
         border: 1px solid var(--clr-neutral-400);
         opacity: 0.3;
       }
+
+      @include breakpoint(large) {
+        padding-block: 0;
+        margin-left: auto;
+        &::before {
+          border: none;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: row;
+
+    &__logo {
+      align-self: center;
+      :nth-child(2) {
+        display: none;
+      }
+    }
+    &__menu--container {
+      flex-direction: row;
+      background-color: transparent;
+      transform: none;
+      position: relative;
+      inset: unset;
+      li a {
+        color: var(--clr-neutral-500);
+        &:hover {
+          color: var(--clr-neutral-600);
+        }
+      }
     }
   }
 }
 
 .menu-open {
   transform: translateX(0);
-}
-
-.testClass {
-  display: none;
 }
