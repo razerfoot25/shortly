@@ -1,0 +1,99 @@
+@use "../components/buttons" as *;
+@use "../abstracts/breakpoints" as *;
+.api {
+  margin-top: 6rem;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 16% 0 0 0;
+    background-color: var(--clr-neutral-400);
+    z-index: -1;
+  }
+  &__textfield {
+    background-color: var(--clr-primary-700);
+    background-image: url("../images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: top right;
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium);
+
+    border-radius: 0.75rem;
+    input[type="url"] {
+      border-radius: 0.5rem;
+      border: 0;
+      outline: 0;
+    }
+    button {
+      @include btn-blue;
+      font-weight: var(--fw-primary-700);
+    }
+    @include breakpoint(large) {
+      background-image: url("../images/bg-shorten-desktop.svg");
+      background-size: cover;
+      background-position: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      input[type="url"] {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &__url--result {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large);
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--medium);
+      background-color: var(--clr-neutral-300);
+      border-radius: 0.25rem;
+
+      :nth-child(2) {
+        position: relative;
+        padding-top: 0.5rem;
+        color: var(--clr-primary-600);
+        &::before {
+          content: "";
+          position: absolute;
+          inset: -0.5rem 0 auto 0;
+          border: 1px solid var(--clr-neutral-400);
+        }
+      }
+      button {
+        @include btn-blue;
+        margin-inline: 1rem;
+      }
+    }
+
+    @include breakpoint(large) {
+      div {
+        flex-direction: row;
+        align-items: center;
+        :nth-child(1) {
+          flex-grow: 1;
+          padding-inline: 0;
+        }
+        :nth-child(2) {
+          padding-block: 0;
+          &::before {
+            border: 0;
+          }
+        }
+        button {
+          margin-inline: 0;
+        }
+      }
+    }
+  }
+}
+
+.copied {
+  background-color: var(--clr-primary-700);
+}

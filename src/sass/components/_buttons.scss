@@ -7,8 +7,16 @@
   background-color: var(--clr-primary-600);
   color: var(--clr-neutral-300);
 
+  position: relative;
   &:hover {
-    opacity: 0.6;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--clr-neutral-300);
+      border-radius: 0.5rem;
+      opacity: 0.5;
+    }
   }
 }
 
@@ -21,7 +29,15 @@
   background-color: var(--clr-primary-600);
   color: var(--clr-neutral-300);
 
+  position: relative;
   &:hover {
-    opacity: 0.6;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--clr-neutral-300);
+      border-radius: 2rem;
+      opacity: 0.5;
+    }
   }
 }

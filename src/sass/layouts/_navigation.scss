@@ -86,10 +86,14 @@
       transform: none;
       position: relative;
       inset: unset;
-      li a {
-        color: var(--clr-neutral-500);
-        &:hover {
-          color: var(--clr-neutral-600);
+      li {
+        align-self: center;
+        a {
+          color: var(--clr-neutral-500);
+          font-weight: var(--fw-primary-700);
+          &:hover {
+            color: var(--clr-neutral-600);
+          }
         }
       }
     }

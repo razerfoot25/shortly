@@ -1,0 +1,104 @@
+@use "../components/buttons" as *;
+@use "../abstracts/breakpoints" as *;
+.footer {
+  &__upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--clr-primary-700);
+    background-image: url("../images/bg-boost-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+
+    @include breakpoint(large) {
+      background-image: url("../images/bg-boost-desktop.svg");
+      background-position: center;
+    }
+    h6 {
+      color: var(--clr-neutral-300);
+    }
+    button {
+      @include btn-blue-rounded;
+    }
+  }
+
+  &__lower {
+    background-color: var(--clr-neutral-700);
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include breakpoint(large) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      > div {
+        mask-image: url("../images/logo.svg");
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+        width: 125px;
+        height: 70px;
+        background-color: var(--clr-neutral-300);
+        @include breakpoint(large) {
+          margin-right: 8rem;
+        }
+      }
+    }
+
+    dl {
+      text-align: center;
+      @include breakpoint(large) {
+        text-align: left;
+        padding-block: var(--small);
+      }
+      display: flex;
+      flex-direction: column;
+      gap: var(--small);
+    }
+    dt {
+      color: var(--clr-neutral-300);
+    }
+    a {
+      color: var(--clr-neutral-500);
+      &:hover {
+        color: var(--clr-primary-600);
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: var(--large);
+
+      li {
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: var(--clr-neutral-300);
+
+        &:hover {
+          background-color: var(--clr-primary-600);
+        }
+        width: 1.75rem;
+
+        a {
+          opacity: 0;
+        }
+      }
+
+      :nth-child(1) {
+        mask-image: url("../images/icon-facebook.svg");
+      }
+      :nth-child(2) {
+        mask-image: url("../images/icon-twitter.svg");
+      }
+      :nth-child(3) {
+        mask-image: url("../images/icon-pinterest.svg");
+      }
+      :nth-child(4) {
+        mask-image: url("../images/icon-instagram.svg");
+      }
+    }
+  }
+}

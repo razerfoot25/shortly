@@ -124,6 +124,15 @@
   }
 }
 
+.px-4xl {
+  padding-inline: var(--4xl);
+  &-lg {
+    @include breakpoint(large) {
+      padding-inline: var(--4xl);
+    }
+  }
+}
+
 .py-xs {
   padding-block: var(--xsmall);
   &-lg {

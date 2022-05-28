@@ -55,45 +55,75 @@
         </div>
       </section>
 
-      <section class="api">
-        <div class="api__textfield">
+      <section class="api grid-container">
+        <div class="api__textfield py-lg px-lg py-xl-lg px-2xl-lg">
           <input
             type="url"
             name="url"
             id="url"
+            class="py-md px-md"
             placeholder="Shorten a link here..."
           />
-          <input type="button" value=" Shorten It!" />
+          <button type="submit">Shorten It!</button>
         </div>
-        <div class="api__url--result"></div>
+        <div class="api__url--result py-lg">
+          <div class="py-md px-lg-lg">
+            <strong class="px-md">https://www.facebook.com/</strong>
+            <strong class="px-md">https://www.fb.me/</strong>
+            <button>Copy</button>
+          </div>
+          <div class="py-md px-lg-lg">
+            <strong class="px-md">https://www.facebook.com/</strong>
+            <strong class="px-md">https://www.fb.me/</strong>
+            <button>Copy</button>
+          </div>
+        </div>
       </section>
 
-      <section class="articles">
+      <section class="articles grid-container spacer py-2xl">
         <h2>Advanced Statistics</h2>
-        <p>
+        <p class="px-4xl-lg">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
-        <div class="grid-col-3">
-          <article>
+        <div class="grid-col-3 py-2xl py-3xl-lg">
+          <article class="py-md px-lg px-xl-lg">
+            <div class="py-lg px-lg">
+              <img
+                src="./images/icon-brand-recognition.svg"
+                alt=" brand recognition"
+              />
+            </div>
             <h3>Brand Recognition</h3>
-            <p>
+            <p class="py-md">
               Boost your brand recognition with each click. Generic links don’t
               mean a thing. Branded links help instil confidence in your
               content.
             </p>
           </article>
-          <article>
+          <article class="py-md px-lg px-xl-lg">
+            <div class="py-lg px-lg">
+              <img
+                src="./images/icon-detailed-records.svg"
+                alt=" brand recognition"
+              />
+            </div>
             <h4>Detailed Records</h4>
-            <p>
+            <p class="py-md">
               Gain insights into who is clicking your links. Knowing when and
               where people engage with your content helps inform better
               decisions.
             </p>
           </article>
-          <article>
+          <article class="py-md px-lg px-xl-lg">
+            <div class="py-lg px-lg">
+              <img
+                src="./images/icon-fully-customizable.svg"
+                alt=" brand recognition"
+              />
+            </div>
             <h5>Fully Customizable</h5>
-            <p>
+            <p class="py-md">
               Improve brand awareness and content discoverability through
               customizable links, supercharging audience engagement.
             </p>
@@ -103,31 +133,39 @@
     </main>
 
     <footer class="footer">
-      <div class="footer__upper">
-        <h6>Boost your links today</h6>
+      <div class="footer__upper spacer px-md py-3xl">
+        <h6 class="py-xs">Boost your links today</h6>
         <button>Get Started</button>
       </div>
-      <div class="footer__lower">
-        <img src="" alt="logo" />
-        <dl>
-          <dt>Features</dt>
-          <dd>Link Shortening</dd>
-          <dd>Branded Links</dd>
-          <dd>Analytics</dd>
-        </dl>
-        <dl>
-          <dt>Resources</dt>
-          <dd>Blog</dd>
-          <dd>Developers</dd>
-          <dd>Support</dd>
-        </dl>
-        <dl>
-          <dt>Company</dt>
-          <dd>About</dd>
-          <dd>Our Team</dd>
-          <dd>Careers</dd>
-          <dd>Contact</dd>
-        </dl>
+      <div class="footer__lower grid-container">
+        <div class="py-xl">
+          <div></div>
+          <dl class="py-md">
+            <dt class="py-md">Features</dt>
+            <dd><a href="#">Link Shortening</a></dd>
+            <dd><a href="#"> Branded Links</a></dd>
+            <dd><a href="#">Analytics</a></dd>
+          </dl>
+          <dl class="py-md">
+            <dt class="py-md">Resources</dt>
+            <dd><a href="">Blog</a></dd>
+            <dd><a href="">Developers</a></dd>
+            <dd><a href="">Support</a></dd>
+          </dl>
+          <dl class="py-md">
+            <dt class="py-md">Company</dt>
+            <dd><a href="">About</a></dd>
+            <dd><a href="">Our Team</a></dd>
+            <dd><a href="">Careers</a></dd>
+            <dd><a href="">Contact</a></dd>
+          </dl>
+          <ul class="py-lg">
+            <li><a href="#">fb</a></li>
+            <li><a href="#">tw</a></li>
+            <li><a href="#">pin</a></li>
+            <li><a href="#">inst</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 

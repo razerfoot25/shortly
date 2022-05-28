@@ -1,0 +1,63 @@
+@use "../abstracts/breakpoints" as *;
+
+.articles {
+  text-align: center;
+  background-color: var(--clr-neutral-400);
+
+  > div {
+    gap: var(--2xl);
+
+    @include breakpoint(large) {
+      gap: var(--xl);
+    }
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 5rem 48% 5rem 48%;
+      background-color: var(--clr-primary-600);
+      @include breakpoint(large) {
+        inset: 47% 0 50% 0;
+      }
+    }
+
+    > :nth-child(2) {
+      transform: translateY(15%);
+    }
+    > :nth-child(3) {
+      transform: translateY(30%);
+    }
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--clr-neutral-300);
+    border-radius: 0.25rem;
+    div {
+      align-self: center;
+      @include breakpoint(large) {
+        align-self: flex-start;
+      }
+      background-color: var(--clr-primary-700);
+      border-radius: 3.25rem;
+
+      position: absolute;
+      top: -3rem;
+
+      img {
+        width: 100%;
+      }
+    }
+    h3,
+    h4,
+    h5 {
+      margin-top: 2.75em;
+    }
+
+    @include breakpoint(large) {
+      text-align: left;
+    }
+  }
+}

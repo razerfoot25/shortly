@@ -20,7 +20,7 @@
 
 :root {
   --grid-column: 6;
-  --max-container-width: 90rem;
+  --max-container-width: 75rem;
   --grid-gap: 1em;
 
   --spacer-margin: 1em;
@@ -32,6 +32,7 @@
   --xl: 2em;
   --2xl: 4em;
   --3xl: 6em;
+  --4xl: 17em;
 
   @each $base, $shade in $colors {
     @each $shades, $colors in $shade {

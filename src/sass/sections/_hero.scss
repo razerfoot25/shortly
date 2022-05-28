@@ -17,6 +17,10 @@
       align-items: flex-start;
       text-align: left;
       justify-content: center;
+
+      p {
+        padding-right: var(--xl);
+      }
     }
   }
   img {
@@ -30,5 +34,8 @@
       margin-inline: calc(-25vw + 75%);
       grid-column: 2;
     }
+  }
+  @include breakpoint(large) {
+    gap: var(--2xl);
   }
 }
