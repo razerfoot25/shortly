@@ -66,10 +66,10 @@
           border: 1px solid var(--clr-neutral-400);
         }
       }
-      button {
-        @include btn-blue;
-        margin-inline: 1rem;
-      }
+    }
+    &--btn {
+      @include btn-blue;
+      margin-inline: 1rem;
     }
 
     @include breakpoint(large) {
@@ -95,5 +95,5 @@
 }
 
 .copied {
-  background-color: var(--clr-primary-700);
+  @include btn-blue-copy;
 }

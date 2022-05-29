@@ -20,6 +20,28 @@
   }
 }
 
+@mixin btn-blue-copy {
+  padding: 0.75em 1.5em;
+  border-radius: 0.5rem;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: var(--clr-primary-700);
+  color: var(--clr-neutral-300);
+
+  position: relative;
+  &:hover {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--clr-neutral-300);
+      border-radius: 0.5rem;
+      opacity: 0.5;
+    }
+  }
+}
+
 @mixin btn-blue-rounded {
   padding: 0.75em 2em;
   border-radius: 2rem;
