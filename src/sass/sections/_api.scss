@@ -7,7 +7,7 @@
   &::before {
     content: "";
     position: absolute;
-    inset: 16% 0 0 0;
+    inset: 9% 0 0 0;
     background-color: var(--clr-neutral-400);
     z-index: -1;
   }
@@ -21,10 +21,12 @@
     flex-direction: column;
     gap: var(--medium);
 
+    position: relative;
+
     border-radius: 0.75rem;
-    input[type="url"] {
+    &--input {
       border-radius: 0.5rem;
-      border: 0;
+      border: 0px;
       outline: 0;
     }
     button {
@@ -42,18 +44,28 @@
         flex-grow: 1;
       }
     }
+    small {
+      display: none;
+    }
   }
 
   &__url--result {
     display: flex;
     flex-direction: column;
     gap: var(--large);
+
     div {
       display: flex;
       flex-direction: column;
       gap: var(--medium);
       background-color: var(--clr-neutral-300);
       border-radius: 0.25rem;
+
+      :nth-child(1) {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
 
       :nth-child(2) {
         position: relative;
@@ -96,4 +108,26 @@
 
 .copied {
   @include btn-blue-copy;
+}
+
+.is-invalid {
+  position: relative;
+  margin-bottom: 1rem;
+  border: 3px solid var(--clr-secondary-400);
+
+  &::placeholder {
+    color: var(--clr-secondary-400);
+  }
+
+  ~ small {
+    display: inline;
+    position: absolute;
+    inset: 6rem auto auto 1.75rem;
+    @include breakpoint(large) {
+      inset: auto auto 0.5rem 4.5rem;
+    }
+
+    font-style: italic;
+    color: var(--clr-secondary-400);
+  }
 }

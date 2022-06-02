@@ -5,6 +5,20 @@
   width: 100%;
   overflow-x: hidden;
   gap: var(--xl);
+
+  &-bg {
+    background-image: url("../images/illustration-working.svg");
+    background-repeat: no-repeat;
+    background-size: 31rem;
+    background-position: 2rem top;
+    @include breakpoint(large) {
+      background-size: 43rem;
+      background-position: 53rem center;
+    }
+    @include breakpoint(xl) {
+      background-position: 75rem center;
+    }
+  }
   &__textfield {
     text-align: center;
     button {
@@ -23,15 +37,10 @@
       }
     }
   }
-  img {
+  > :nth-child(2) {
     grid-row: 1;
-    max-width: 120vw;
-    width: 120vw;
-    margin-inline: calc(-55vw + 65%);
-
+    padding-block: 10rem;
     @include breakpoint(large) {
-      max-width: 100%;
-      margin-inline: calc(-25vw + 75%);
       grid-column: 2;
     }
   }

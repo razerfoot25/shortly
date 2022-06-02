@@ -21,56 +21,90 @@ menuIcon.addEventListener("click", (e) => {
   setTimeout(hideNav, 300);
 });
 
-const AppendResult = async (result, original) => {
-  let div = document.createElement("div");
-  let shortLink = document.createElement("strong");
-  let originalLink = document.createElement("strong");
-  let copyBtn = document.createElement("button");
+class Append {
+  constructor(result, original) {
+    this.result = result;
+    this.original = original;
+  }
 
-  div.classList.add("py-md", "px-lg-lg");
-  sessionStorage.setItem(original, result);
+  AppendElements = () => {
+    let div = document.createElement("div");
+    let shortLink = document.createElement("strong");
+    let originalLink = document.createElement("strong");
+    let copyBtn = document.createElement("button");
 
-  shortLink.classList.add("px-md");
-  shortLink.textContent = result;
+    div.classList.add("py-md", "px-lg-lg");
 
-  originalLink.classList.add("px-md");
-  originalLink.textContent = original;
+    shortLink.classList.add("px-md");
+    shortLink.textContent = this.result;
 
-  copyBtn.classList.add("api__url--result--btn");
-  copyBtn.textContent = "Copy";
+    originalLink.classList.add("px-md");
+    originalLink.textContent = this.original;
 
-  copyBtn.addEventListener("click", (e) => {
-    e.target.classList.add("copied");
-    e.target.textContent = "Copied!";
+    copyBtn.classList.add("api__url--result--btn");
+    copyBtn.textContent = "Copy";
 
-    navigator.clipboard.writeText(result);
-  });
+    copyBtn.addEventListener("click", (e) => {
+      e.target.classList.add("copied");
+      e.target.textContent = "Copied!";
 
-  div.append(originalLink, shortLink, copyBtn);
-  ListifResults.append(div);
-};
+      navigator.clipboard.writeText(this.result);
+    });
+
+    div.append(originalLink, shortLink, copyBtn);
+    ListifResults.append(div);
+  };
+
+  AppendResult = () => {
+    sessionStorage.setItem(this.original, this.result);
+    this.AppendElements();
+  };
+
+  AppendSession = () => {
+    this.AppendElements();
+  };
+}
 
 const shortUrl = async (url) => {
   fetch("https://api.shrtco.de/v2/shorten?url=" + url, {
     method: "GET",
   })
-    .then(async (res) => res.json())
-    .then(
-      async (data) =>
-        await AppendResult(
-          data.result.full_short_link,
-          data.result.original_link
-        )
-    );
+    .then(async (res) => await res.json())
+    .then((data) => {
+      let Result = new Append(
+        data.result.full_short_link,
+        data.result.original_link
+      );
+      Result.AppendResult();
+    });
+};
+
+const UrlIsInvalid = () => {
+  Urlbar.classList.add("is-invalid");
 };
 
 submitBtn.addEventListener("click", (e) => {
-  if (!Urlbar.value) {
-    console.log("bar is empty");
-  } else {
+  if (!isValid(Urlbar.value)) {
+    Urlbar.classList.add("is-invalid");
+  } else if (isValid(Urlbar.value)) {
+    Urlbar.classList.remove("is-invalid");
     shortUrl(Urlbar.value);
   }
 });
+var elm;
+const isValid = (link) => {
+  if (link !== "") {
+    if (!elm) {
+      elm = document.createElement("input");
+      elm.setAttribute("type", "url");
+    }
+    elm.value = link;
+
+    return elm.validity.valid;
+  } else {
+    return false;
+  }
+};
 
 const AppendSession = (original, result) => {
   let div = document.createElement("div");
@@ -102,5 +136,6 @@ const AppendSession = (original, result) => {
 Object.entries(sessionStorage).forEach((item) => {
   let original = item[0];
   let short = item[1];
-  AppendSession(original, short);
+  let SessionInfo = new Append(short, original);
+  SessionInfo.AppendSession();
 });
